@@ -1,3 +1,3 @@
 <?php
 
-$age = 18;
+$age = '22test';
