@@ -1,0 +1,120 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+body {
+  font-family: "Open Sans", sans serif;
+}
+
+section {
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+article {
+  background-color: rgb(255, 255, 255);
+  width: auto;
+  height: auto;
+  padding: 30px;
+  color: #140840;
+  box-shadow: -0.4em 0.4em 25px rgba(64, 64, 64, 0.7);
+}
+
+input[type=submit] {
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: linear-gradient(to left, #ffae36, #e28c34);
+  color: white;
+  border: none;
+  outline: 0;
+  transition: .5s linear;
+}
+
+input[type=submit]:hover {
+    background: linear-gradient(to left, #eba031, #d48432);
+    transform: scale(1.01);
+}
+
+input[type=submit]:active {
+    transition: none;
+    box-shadow: inset 0 0 25px rgba(64, 64, 64, 0.4);
+}
+
+label {
+  font-weight: bolder;
+  width: 100px;
+  display: inline-block;
+}
+
+form input {
+  border: 1px solid #C1C1C1;
+  border-radius: 25px;
+  padding: 5px 7px;
+  margin-bottom: 17px;
+  outline: 0;
+  width: 260px;
+}
+
+form input:focus {
+    box-shadow: 0 0 0 1pt darkturquoise;
+    border: 1px solid #ffffff;
+}

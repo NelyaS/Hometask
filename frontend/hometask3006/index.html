@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Тестовая версия</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <section>
+        <article>
+            <form action="#" id='send' method='POST'>
+                <label>Имя :</label>
+                <input type='text' name='name' placeholder='Имя' required><span></span>
+                <br>
+                <label>Фамилия :</label>
+                <input type='text' name='surname' placeholder='Фамилия' required><span></span>
+                <br>
+                <label>Страна :</label>
+                <input type='text' name='country' placeholder='Страна' required><span></span>
+                <br>               
+                <label>Эл. почта :</label>
+                <input type='email' name='email' placeholder='Эл. почта' required pattern="\S+@[a-z]+.[a-z]+"><span></span>
+                <br>
+                <label>Логин :</label>
+                <input type='text' name='login' placeholder='Логин' required><span></span>
+                <br>
+                <label>Пароль :</label>
+                <input type='password' name='repeat' placeholder='Пароль' required><span></span>
+                <br>
+            </form>
+            <input type="submit" value="Зарегестрироваться" form='send'>
+        </article> 
+    </section>
+</body>
+
+</html>
