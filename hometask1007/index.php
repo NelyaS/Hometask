@@ -21,8 +21,8 @@ if (isset($_POST['action'])) {
     $allComments = getComment();
     $newComment = [
         'user' => $_POST['user_name'],
-        'title' => $_POST['title'],
-        'body' => $_POST['body']
+        'title' => censor ($_POST['title']),
+        'body' => censor ($_POST['body'])
     ];
 
     array_unshift($allComments, $newComment);
