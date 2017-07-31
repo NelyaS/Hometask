@@ -9,7 +9,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'add_category') {
 }
 
 if (isset($_POST['action']) && $_POST['action'] == 'add_product') {
-    addProduct(["id" => getProductId(), "name" => $_POST['categoryName'], "description" => $_POST['description'], "category" => $_POST['category']]);
+    addProduct(["id" => getProductId(), "name" => $_POST['productName'], "description" => $_POST['description'], "category" => $_POST['category']]);
 }
 
 if (isset($_POST['action']) && $_POST['action'] == 'log_out') logout();

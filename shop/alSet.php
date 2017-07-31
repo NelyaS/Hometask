@@ -62,11 +62,12 @@ function isAuth ()
     return $_SESSION['user_name'];
 }
 
-function placeToBasket ($goodId)
-{
-    if (!isset($_SESSION['basket'])) $_SESSION['basket'] = [];
-    array_push($_SESSION['basket'], $goodId);
-}
+//function placeToBasket ($goodId)
+//{
+//    print_r($goodId);
+//    if (!isset($_SESSION['basket'])) $_SESSION['basket'] = [];
+//    array_push($_SESSION['basket'], $goodId);
+//}
 
 function getBasketCounter ()
 {
@@ -76,9 +77,57 @@ function getBasketCounter ()
 function login (array $user)
 {
     $users = getUsers();
+//    $resultArray = array_filter($users,function($data) use ($user['name']) {
+//        return in_array($data['name'], $user['name']);
+//    });
+    $result = false;
+    foreach ($users as $value) {
+        if($value['name'] == $user['name']) {
+            $result = (password_verify($user['pass'], $value['pass'])) ? true : false;
+            return $result;
+        }
+    }
 
-    $a = array_intersect_assoc($user, $users);
-    return $a;
+    return $result;
+}
+
+//function addToBasket($productId)
+//{
+//    $product = array_filter(getProducts(), function ($i) use ($productId){
+//        return $i['id'] == $productId;
+//    });
+//    $product[$productId-1]['userName'] = $user['name'];
+//    print_r($product[$productId-1]);
+//}
+
+function placeToBasket ($productId)
+{
+    $product = array_filter(getProducts(), function ($i) use ($productId){
+        return $i['id'] == $productId;
+    });
+    $product[$productId-1]['userName'] = $_SESSION['user_name'];
+//    print_r($product[$productId-1]);
+//    echo $_SESSION['user_name'];
+    $products = getBasket();
+    array_push($products, $product[$productId-1]);
+    file_put_contents('basket.txt', serialize($products));
+}
+
+function getBasket()
+{
+    $data = unserialize(file_get_contents('basket.txt'));
+    if (!is_array($data) || empty($data)) {
+        $data = [];
+    }
+    return $data;
+}
+
+function getUsersBasket()
+{
+    $user = $_SESSION['user_name'];
+    return array_filter(getBasket(), function ($i) use ($user){
+        return $i['userName'] == $user;
+    });
 }
 
 function logout ()
@@ -158,12 +207,12 @@ function getProductsFromBasket()
     return $data;
 }
 
-function addProductToBasket (array $product)
-{
-    $products = getProducts();
-    array_push($products, $product);
-    file_put_contents('basket.txt', serialize($products));
-}
+//function addProductToBasket (array $product)
+//{
+//    $products = getProducts();
+//    array_push($products, $product);
+//    file_put_contents('basket.txt', serialize($products));
+//}
 
 
 

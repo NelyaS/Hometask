@@ -3,7 +3,7 @@
 include_once "alSet.php";
 
 if (isset($_POST['action']) && $_POST['action'] == 'log_in') {
-    if (login(["name" => $_POST['userName'], "pass" => md5($_POST['userPass'])]) != false) {
+    if (login(["name" => $_POST['userName'], "pass" => $_POST['userPass']]) != false) {
         $_SESSION['user_name'] = $_POST['userName'];
         header("Location: shop.php");
     } else {
